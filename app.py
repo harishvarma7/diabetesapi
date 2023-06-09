@@ -7,9 +7,7 @@ model=pickle.load(open("diabetes.pkl","rb"))
 
 app=FastAPI()
 
-@app.get("/")
-def greet():
-    return {"Hello world"}
+
 
 @app.post("/predict")
 def predict(data:health):
