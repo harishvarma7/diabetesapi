@@ -9,7 +9,7 @@ app=FastAPI()
 
 
 
-@app.post("/predict")
+@app.post("/")
 def predict(data:health):
     data=data.dict()
     
