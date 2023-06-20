@@ -2,12 +2,21 @@ from fastapi import FastAPI
 import uvicorn
 import pickle
 from model import health
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 model=pickle.load(open("diabetes.pkl","rb"))
 
 app=FastAPI()
 
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Update this with the appropriate origins if needed
+    allow_methods=["*"],  # Update this with the appropriate HTTP methods if needed
+    allow_headers=["*"],  # Update this with the appropriate headers if needed
+)
 
 @app.post("/")
 def predict(data:health):
