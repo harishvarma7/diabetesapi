@@ -4,4 +4,4 @@ fastapi
 Flask
 scikit-learn
 pandas
-CORSMiddleware
+
